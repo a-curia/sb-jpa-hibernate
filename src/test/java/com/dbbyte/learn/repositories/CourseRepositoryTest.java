@@ -1,7 +1,8 @@
 package com.dbbyte.learn.repositories;
 
-import com.dbbyte.learn.SbJpaHibernateApplication;
-import com.dbbyte.learn.entities.Course;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -11,7 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
+import com.dbbyte.learn.SbJpaHibernateApplication;
+import com.dbbyte.learn.entities.Course;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SbJpaHibernateApplication.class) // lunch entire context
@@ -54,6 +56,13 @@ public class CourseRepositoryTest {
     	
     	
     }
+    
+	@Test
+	@DirtiesContext
+	public void playWithEntityManager() {
+		courseRepository.playWithEntityManager();
+	}
+    
 
 
 }

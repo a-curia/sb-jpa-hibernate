@@ -39,6 +39,10 @@ public class CourseRepository {
     	em.persist(course);
     	
     	course.setName("my new name"); // this is saved to db but i din not required this - course is keept in track by entity manager
+    	
+		Course course2 = findById(10001L);
+		
+		course2.setName("JPA in 50 Steps - Updated");
     }
 
 }

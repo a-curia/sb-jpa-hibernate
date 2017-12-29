@@ -68,6 +68,53 @@ available only using Hibernate
 
 -   are fit where there is something specific to database
 
+  \@OneToOne - relationship is Eager fetched
+
+ 
+
+**Session & Session Factory**
+
+**Entity Manager & Persistence Context**
+
+**Transaction** - everything succeeded or all fail; every time to define a
+transaction you also create a Persistence Context; if \\\@Transactional is
+missing, each call will act as a separate transaction; at the start of a
+transaction a Persistence Context is created; without transaction we don’t have
+a database connection
+
+**Persistence Context** - is the place where all the entities which you are
+operating upon are stored; all changes are kept track of; acts as 2 things -
+store of changes and gives you access to database
+
+**Entity Manager** - is the way we can interact with the Persistent Context;
+when you call a method on the Entity Manager you are actually playing with the
+Persistence Context; is the interface to the Persistence Context; has one
+default transaction
+
+ 
+
+In Hibernate Terminology, Session = Persistence Context
+
+ 
+
+\@DirtiestContext in \@Test will leve the data in the consistent state. All the
+changes that are made in the test will be rolled back.
+
+ 
+
+\@ManyToOne and \@OneToMany relationships and “mappedBy” on non relathinship
+owner
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
  
 
  
