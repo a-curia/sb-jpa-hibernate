@@ -107,6 +107,46 @@ owner
 
  
 
+\@ManyToMany - new join table is created
+
+\@JoinTable
+
+joinColumns=\@JoinColumn
+
+inverseJoinColumns=\@JoinColumn
+
+ 
+
+Rule is that
+
+\*\*\*ToOne : default is Eager Fetching
+
+\*\*\*ToMany : default is Lazy Fetching
+
+ 
+
+Inheritance Hierarchies and Mappings
+
+If we have one entity class that is extended by other classes, to keep the
+columns on the same table we must use \@Inheritance on the abstract class and
+here we can specify the strategy InheritanceType.SINGLE_TABLE; DTYPE compumn can
+be specified using \@DiscriminatorColumn
+
+ 
+
+TABLE_PER_CLASS - creates a table per concrete entity class
+
+JOINED - fields that are specific to a subclass are mapped to a separate table
+than the fields that are common to the parent class, and a join is performed to
+instantiate the subclass
+
+ 
+
+\@MappedSuperclass - used when you don’t want to use inheritance at all; this
+class cannot be an \@Entity
+
+ 
+
  
 
  
